@@ -46,7 +46,6 @@ def test_login(driver):
             submenu_items = driver.find_elements_by_css_selector("li#app-[class='selected'] ul li")
             for j in range(0,len(submenu_items)):
 
-                #submenu_items = driver.find_elements_by_css_selector("li#app-[class='selected'] ul li")
                 submenu_items[j].click()
                 assert is_element_present(driver, By.TAG_NAME, "h1")
                 submenu_items = driver.find_elements_by_css_selector("li#app-[class='selected'] ul li")
