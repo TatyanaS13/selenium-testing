@@ -8,7 +8,10 @@ import os
 @pytest.fixture
 def driver(request):
     print(os.environ)
-    wd = webdriver.Chrome()
+    #wd = webdriver.Chrome()
+    #wd = webdriver.Firefox()
+    wd = webdriver.Firefox(capabilities={"marionette":True})
+    #wd = webdriver.Safari()
     print(wd.capabilities)
     request.addfinalizer(wd.quit)
     return wd
